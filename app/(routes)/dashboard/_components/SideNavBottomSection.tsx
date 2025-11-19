@@ -37,61 +37,89 @@ function SideNavBottomSection({onFileCreate,totalFiles}:any) {
   ]
   const [fileInput,setFileInput]=useState('');
   return (
-    <div>
+    <div className='space-y-1'>
       {menuList.map((menu,index)=>(
-        <h2 key={index} className='flex gap-2 p-1 px-2 text-[14px] 
-        hover:bg-gray-100 rounded-md cursor-pointer'>
-          <menu.icon className='h-5 w-5'/>
-          {menu.name}</h2>
+        <button
+          key={index} 
+          className='w-full flex gap-2 items-center p-2.5 text-sm 
+          hover:bg-gray-100 rounded-lg cursor-pointer text-gray-700 transition-colors'
+        >
+          <menu.icon className='h-4 w-4'/>
+          <span>{menu.name}</span>
+        </button>
       ))}
 
       {/* Add New File Button  */}
       <Dialog>
-  <DialogTrigger className='w-full' asChild>
-  <Button className='w-full bg-blue-600 
-      hover:bg-blue-700 justify-start mt-3'>New File</Button>
-  </DialogTrigger>
-  {totalFiles<Constant.MAX_FREE_FILE? 
-  <DialogContent>
-    <DialogHeader>
-      <DialogTitle>Create New File</DialogTitle>
-      <DialogDescription>
-          <Input placeholder='Enter File Name' 
-          className='mt-3'
-          onChange={(e)=>setFileInput(e.target.value)}
-          />
-      </DialogDescription>
-    </DialogHeader>
-    <DialogFooter className="">
-          <DialogClose asChild>
-            <Button type="button" 
-            className='bg-blue-600
-            hover:bg-blue-700'
-            disabled={!(fileInput&&fileInput.length>3)}
-            onClick={()=>onFileCreate(fileInput)}
-            >
-              Create
-            </Button>
-          </DialogClose>
-        </DialogFooter>
-  </DialogContent>:
-  <PricingDialog/>}
-</Dialog>
+        <DialogTrigger className='w-full' asChild>
+          <Button className='w-full bg-gradient-to-r from-blue-600 to-blue-700 
+              hover:from-blue-700 hover:to-blue-800 justify-center mt-4 shadow-sm
+              text-white font-medium'>
+            <span className='mr-1'>+</span> New File
+          </Button>
+        </DialogTrigger>
+        {totalFiles<Constant.MAX_FREE_FILE? 
+        <DialogContent className='sm:max-w-md'>
+          <DialogHeader>
+            <DialogTitle className='text-xl'>Create New File</DialogTitle>
+            <DialogDescription className='pt-2'>
+                <Input 
+                  placeholder='Enter file name...' 
+                  className='mt-3'
+                  onChange={(e)=>setFileInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && fileInput && fileInput.length > 3) {
+                      onFileCreate(fileInput);
+                    }
+                  }}
+                />
+                <p className='text-xs text-gray-500 mt-2'>File name must be at least 4 characters</p>
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="gap-2">
+            <DialogClose asChild>
+              <Button type="button" variant="outline">
+                Cancel
+              </Button>
+            </DialogClose>
+            <DialogClose asChild>
+              <Button 
+                type="button" 
+                className='bg-blue-600 hover:bg-blue-700'
+                disabled={!(fileInput&&fileInput.length>3)}
+                onClick={()=>onFileCreate(fileInput)}
+              >
+                Create
+              </Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>:
+        <PricingDialog/>}
+      </Dialog>
 
-     
-      
       {/* Progress Bar  */}
-      <div className='h-4 w-full bg-gray-200 rounded-full mt-5'>
-          <div className={`h-4  bg-blue-600 rounded-full`}
-          style={{ width: `${(totalFiles/5)*100}%` }}
-         >
+      <div className='mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200'>
+        <div className='flex items-center justify-between mb-2'>
+          <span className='text-xs font-semibold text-gray-700'>Storage</span>
+          <span className='text-xs text-gray-600'>
+            {totalFiles || 0} / {Constant.MAX_FREE_FILE}
+          </span>
+        </div>
+        <div className='h-2 w-full bg-gray-200 rounded-full overflow-hidden'>
+          <div 
+            className={`h-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-300`}
+            style={{ width: `${Math.min((totalFiles/Constant.MAX_FREE_FILE)*100, 100)}%` }}
+          >
           </div>
+        </div>
+        <p className='text-xs text-gray-600 mt-2'>
+          {totalFiles >= Constant.MAX_FREE_FILE ? (
+            <span className='text-amber-600 font-medium'>Limit reached. Upgrade for unlimited access.</span>
+          ) : (
+            <span>Upgrade your plan for unlimited access.</span>
+          )}
+        </p>
       </div>
-
-      <h2 className='text-[12px] mt-3'>
-        <strong>{totalFiles}</strong> out of <strong>{Constant.MAX_FREE_FILE}</strong> files used</h2>
-      <h2 className='text-[12px] mt-1'>Upgrade your plan for unlimited access.</h2>  
-
      </div>
   )
 }

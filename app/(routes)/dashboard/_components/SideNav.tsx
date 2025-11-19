@@ -52,16 +52,16 @@ function SideNav() {
   return (
     <div
     className='h-full md:h-screen 
-    w-full md:w-72 border-r border-[1px] p-4 sm:p-6
-    flex flex-col
+    w-full md:w-72 p-4 sm:p-6
+    flex flex-col bg-white
     '
     >
-      <div className='flex-1'>
-      <SideNavTopSection user={user} 
-      setActiveTeamInfo={(activeTeam:TEAM)=>setActiveTeam(activeTeam)}/>
+      <div className='flex-1 overflow-y-auto'>
+        <SideNavTopSection user={user} 
+        setActiveTeamInfo={(activeTeam:TEAM)=>setActiveTeam(activeTeam)}/>
       </div>
     
-     <div>
+     <div className='mt-auto pt-4 border-t border-gray-200'>
       <SideNavBottomSection
       totalFiles={totalFiles}
       onFileCreate={onFileCreate}
