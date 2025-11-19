@@ -35,11 +35,11 @@ function DashboardLayout(
   return (
     <div>
       <FileListContext.Provider value={{fileList_,setFileList_}}>
-      <div className='grid grid-cols-4'>
-          <div className='bg-white h-screen w-72 fixed'>
+      <div className='flex flex-col md:flex-row'>
+          <div className='bg-white h-auto md:h-screen w-full md:w-72 md:fixed md:left-0 md:top-0 z-10'>
           <SideNav/>
           </div>
-          <div className='col-span-4 ml-72'>
+          <div className='flex-1 md:ml-72 w-full'>
           {children}
           </div>
       </div>

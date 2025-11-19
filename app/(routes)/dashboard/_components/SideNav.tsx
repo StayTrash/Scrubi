@@ -51,8 +51,8 @@ function SideNav() {
 
   return (
     <div
-    className=' h-screen 
-    fixed w-72 borde-r border-[1px] p-6
+    className='h-full md:h-screen 
+    w-full md:w-72 border-r border-[1px] p-4 sm:p-6
     flex flex-col
     '
     >

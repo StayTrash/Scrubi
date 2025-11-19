@@ -18,7 +18,7 @@ function Canvas({onSaveTrigger,fileId,fileData}:{onSaveTrigger:any,fileId:any,fi
         }).then(resp=>console.log(resp))
     }
     return (
-    <div style={{ height: "670px" }}>
+    <div className="w-full h-full min-h-[400px] md:min-h-0 bg-white">
    {fileData&& <Excalidraw 
     theme='light'
     initialData={{

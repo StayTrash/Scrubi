@@ -104,8 +104,8 @@ function Editor({onSaveTrigger,fileId,fileData}:{onSaveTrigger:any,fileId:any,fi
       }
     }
   return (
-    <div>
-        <div id='editorjs' className='ml-20'></div>
+    <div className="w-full h-full overflow-y-auto bg-white">
+        <div id='editorjs' className='p-4 sm:p-6 md:p-8 lg:px-20 max-w-4xl mx-auto min-h-full'></div>
     </div>
   )
 }
