@@ -114,7 +114,7 @@ function SideNavTopSection({user,setActiveTeamInfo}:any) {
                             {item.name}
                         </button>
                     ))}
-                    <LogoutLink className='block'>
+                    <LogoutLink postLogoutRedirectURL="/" className='block'>
                         <button className='w-full flex gap-2 items-center
                             p-2.5 hover:bg-red-50 hover:text-red-600 rounded-lg cursor-pointer text-sm text-gray-700 transition-colors'>
                             <LogOut className='h-4 w-4'/>
