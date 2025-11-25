@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { FileText, Users, GitBranch, Shield, Sparkles } from 'lucide-react'
+import { FileText, GitBranch, Shield, Sparkles } from 'lucide-react'
 
 const features = [
   {
@@ -8,12 +8,6 @@ const features = [
     title: "Markdown Editor",
     description: "Powerful markdown editor with syntax highlighting and live preview. Write documentation with ease.",
     color: "text-sky-400"
-  },
-  {
-    icon: Users,
-    title: "Real-time Collaboration",
-    description: "Work together with your team in real-time. See changes as they happen, no refresh needed.",
-    color: "text-blue-400"
   },
   {
     icon: GitBranch,
@@ -46,7 +40,7 @@ function Features() {
             <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent"> build better</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto px-2">
-            Powerful features designed to help engineering teams create, collaborate, and ship faster.
+            Powerful features designed to help engineering teams create and ship faster.
           </p>
         </div>
 

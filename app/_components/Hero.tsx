@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
-import { ArrowRight, Sparkles, FileText, Users } from 'lucide-react'
+import { ArrowRight, Sparkles, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 function Hero() {
@@ -37,9 +37,9 @@ function Hero() {
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            All-in-one markdown editor, collaborative canvas, and diagram-as-code builder.
+            All-in-one markdown editor, canvas, and diagram-as-code builder.
             <br className="hidden sm:block" />
-            <span className="text-slate-400"> Build, share, and collaborate seamlessly.</span>
+            <span className="text-slate-400"> Build and share seamlessly.</span>
           </p>
 
           {/* CTA Buttons */}
@@ -70,10 +70,6 @@ function Hero() {
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700 backdrop-blur-sm">
               <FileText className="w-4 h-4 text-sky-400" />
               <span className="text-sm text-slate-300">Markdown Editor</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700 backdrop-blur-sm">
-              <Users className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-slate-300">Real-time Collaboration</span>
             </div>
           </div>
         </div>
