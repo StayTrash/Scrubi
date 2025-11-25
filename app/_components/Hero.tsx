@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
-import { ArrowRight, Sparkles, FileText } from 'lucide-react'
+import { ArrowRight, Sparkles, FileText, PenTool } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 function Hero() {
@@ -37,9 +37,9 @@ function Hero() {
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            All-in-one markdown editor, canvas, and diagram-as-code builder.
+            Create documents with a block-based editor and draw diagrams on an interactive canvas.
             <br className="hidden sm:block" />
-            <span className="text-slate-400"> Build and share seamlessly.</span>
+            <span className="text-slate-400"> All in one workspace for your projects.</span>
           </p>
 
           {/* CTA Buttons */}
@@ -69,7 +69,11 @@ function Hero() {
           <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700 backdrop-blur-sm">
               <FileText className="w-4 h-4 text-sky-400" />
-              <span className="text-sm text-slate-300">Markdown Editor</span>
+              <span className="text-sm text-slate-300">Document Editor</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700 backdrop-blur-sm">
+              <PenTool className="w-4 h-4 text-blue-400" />
+              <span className="text-sm text-slate-300">Drawing Canvas</span>
             </div>
           </div>
         </div>

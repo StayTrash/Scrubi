@@ -1,31 +1,43 @@
 "use client"
 import React from 'react'
-import { FileText, GitBranch, Shield, Sparkles } from 'lucide-react'
+import { FileText, PenTool, FolderOpen, Search, Save, Layout } from 'lucide-react'
 
 const features = [
   {
     icon: FileText,
-    title: "Markdown Editor",
-    description: "Powerful markdown editor with syntax highlighting and live preview. Write documentation with ease.",
+    title: "Block-based Editor",
+    description: "Create rich documents with headers, lists, checklists, and paragraphs using a modern block-based editor.",
     color: "text-sky-400"
   },
   {
-    icon: GitBranch,
-    title: "Version Control",
-    description: "Track changes, revert to previous versions, and maintain a complete history of your work.",
+    icon: PenTool,
+    title: "Drawing Canvas",
+    description: "Draw diagrams and sketches using an interactive whiteboard canvas. Create visual representations with ease.",
+    color: "text-blue-400"
+  },
+  {
+    icon: FolderOpen,
+    title: "File Management",
+    description: "Organize your documents and drawings in one place. Create, manage, and access all your files easily.",
     color: "text-indigo-400"
   },
   {
-    icon: Shield,
-    title: "Secure & Private",
-    description: "Your data is encrypted and secure. Enterprise-grade security for your peace of mind.",
-    color: "text-purple-400"
+    icon: Search,
+    title: "Quick Search",
+    description: "Find your files instantly with powerful search functionality. Locate documents and diagrams quickly.",
+    color: "text-cyan-400"
   },
   {
-    icon: Sparkles,
-    title: "Diagram as Code",
-    description: "Build complex diagrams using code. Version control your diagrams just like your codebase.",
-    color: "text-pink-400"
+    icon: Save,
+    title: "Save & Sync",
+    description: "Manually save your work and keep everything synchronized. Your documents and drawings are always safe.",
+    color: "text-emerald-400"
+  },
+  {
+    icon: Layout,
+    title: "Dual View",
+    description: "View your document editor and drawing canvas side by side. Work on both simultaneously in one workspace.",
+    color: "text-violet-400"
   }
 ]
 
@@ -40,7 +52,7 @@ function Features() {
             <span className="bg-gradient-to-r from-sky-400 to-blue-400 bg-clip-text text-transparent"> build better</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto px-2">
-            Powerful features designed to help engineering teams create and ship faster.
+            Simple tools to create documents and draw diagrams for your projects.
           </p>
         </div>
 
