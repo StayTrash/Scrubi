@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
-import { ArrowRight, Sparkles, FileText, Users, Zap } from 'lucide-react'
+import { ArrowRight, Sparkles, FileText, Users } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 function Hero() {
@@ -19,7 +19,7 @@ function Hero() {
           bg-sky-500/10 border border-sky-500/20 backdrop-blur-sm
           text-sky-300 text-sm font-medium'>
           <Sparkles className="w-4 h-4" />
-          <span>See What's New | <span className='text-sky-400 font-semibold'>AI Diagram</span></span>
+          <span>See What's New | <span className='text-sky-400 font-semibold'>Diagrams</span></span>
         </div>
       </div>
 
@@ -74,10 +74,6 @@ function Hero() {
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700 backdrop-blur-sm">
               <Users className="w-4 h-4 text-blue-400" />
               <span className="text-sm text-slate-300">Real-time Collaboration</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700 backdrop-blur-sm">
-              <Zap className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-slate-300">AI-Powered</span>
             </div>
           </div>
         </div>

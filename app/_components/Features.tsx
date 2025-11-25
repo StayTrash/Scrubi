@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { FileText, Users, Zap, GitBranch, Shield, Sparkles } from 'lucide-react'
+import { FileText, Users, GitBranch, Shield, Sparkles } from 'lucide-react'
 
 const features = [
   {
@@ -14,12 +14,6 @@ const features = [
     title: "Real-time Collaboration",
     description: "Work together with your team in real-time. See changes as they happen, no refresh needed.",
     color: "text-blue-400"
-  },
-  {
-    icon: Zap,
-    title: "AI-Powered Diagrams",
-    description: "Generate diagrams instantly with AI assistance. Turn your ideas into visual diagrams in seconds.",
-    color: "text-cyan-400"
   },
   {
     icon: GitBranch,
